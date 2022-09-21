@@ -1,49 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% load static %}
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-  <title>Contul Meu</title>
-</head>
+{% extends 'imobiliare/main.html' %}
+{% load static %}
+{% block content %}
+<section>
+  <h1 class="section-title">Intrare in cont</h1>
+  <form class="login-form card">
+    <input placeholder="E-mail" type="email" required>
+    <input placeholder="Parola" type="password" required class="margin-top">
+    <button class="margin-top"> Intra </button>
+  </form>
+</section>
+<section>
+  <h1 class="section-title"> Creare cont nou</h1>
+  <form class="login-form card">
+    <input placeholder="E-mail" type="email" required>
+    <input placeholder="Parola Noua" type="password" required class="margin-top">
+    <input placeholder="Confirmare Parola" type="password" required class="margin-top">
+    <button class="margin-top"> Creare </button>
+  </form>
+</section>
 
-<body>
-  <header>
-    {% include 'imobiliare/header.html'%}
-    </div>
-  </header>
-  <main>
-{    <section>
-      <h1 class="section-title">Intrare in cont</h1>
-      <form class="login-form card"> 
-        <input placeholder="E-mail" type="email" required>
-        <input placeholder="Parola" type="password" required class="margin-top">
-        <button class="margin-top"> Intra </button>
-      </form>
-    </section>
-    <section>
-      <h1 class="section-title"> Creare cont nou</h1>
-      <form class="login-form card"> 
-        <input placeholder="E-mail" type="email" required>
-        <input placeholder="Parola Noua" type="password" required class="margin-top">
-        <input placeholder="Confirmare Parola" type="password" required class="margin-top">
-        <button class="margin-top"> Creare </button>
-      </form>
-    </section>}
-  </main>
-  <footer>
-    <ul>
-      <li>
-        <a href="https://www.instagram.com" target="_blank"><img src="/img/icons/insta.png" alt="Instagram logo" /></a>
-      </li>
-      <li>
-        <a href="https://www.facebook.com" target="_blank"><img src="/img/icons/facebook.png" alt="Facebook logo" /></a>
-      </li>
-    </ul>
-    <p>&copy; Zaki Technologies</p>
-  </footer>
-</body>
-
-</html>
+{% endblock content %}
