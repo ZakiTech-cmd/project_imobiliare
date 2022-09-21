@@ -1,0 +1,171 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background: url("/static/img/background-header.jpg");
+    box-shadow: inset 0px 50px 50px rgb(24, 24, 24);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    padding: 1rem;
+    color: aliceblue;
+
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    color: aliceblue;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #afafaf;
+}
+
+
+
+main ul {
+    width: 100%;
+    margin: 0 auto 48px auto;
+    display: flex;
+
+}
+
+.card {
+    /* era display: flex*/
+    background-color: white;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.card h2 {
+    text-align: center;
+}
+
+.margin-right {
+    margin-right: 1rem;
+}
+
+.margin-top {
+    margin-top: 1rem;
+}
+
+.section-title {
+    text-align: center;
+    padding: 20px;
+}
+
+.item-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-content h2 {
+    margin: 0;
+}
+
+.actions {
+    text-align: right;
+}
+
+.actions a {
+    text-decoration: none;
+    padding: 6px;
+    color: #000000;
+    border-radius: 5px;
+}
+
+.actions a:hover {
+    color: #EE284B;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+}
+
+
+/* Footer */
+footer {
+    background: linear-gradient(70deg, rgb(24, 24, 24), rgb(25, 29, 29));
+    padding: 36px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    margin-top: 1rem;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    /*padding: 40px;*/
+}
+
+footer li {
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+}
+
+footer img {
+    width: 100%;
+    height: 100%;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+    margin: 0 20px;
+    font-size: 20px;
+}
+
+
+
+/* Login Page */
+
+.login-form {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    padding: 0 0.5rem;
+    border: 1px solid #afafaf;
+}
+
+.login-form button {
+    padding: 0 0.5rem;
+    border: 1px solid #000000;
+}
+
+.login-form button:hover {
+    color: #525252;
+}
