@@ -4,110 +4,23 @@
 <section>
   <h1 class="section-title">APARTAMENTE</h1>
   <div class="grid">
+    {% for announce in announces %}
     <div class="card">
-      <img src="{% static 'img/apartamente/dormitor1.jpg' %}" alt="Apartament1" />
+      <img src="{% static announce.image %}" alt="{{announce.title}}" />
       <div class="item-content">
         <div>
-          <h2>80.000$</h2>
-          <p>
-            Vă propunem spre vînzare acest apartament cu 2 camere + living, sect. Telecentru, str. Gheorghe Asachi
-            cu
-            suprafața totală de 56 mp.
-          </p>
+          <h2>{{announce.title}}</h2><br>
+          <h3>
+            {{announce.price}} €
+          </h3>
         </div>
         <div class="actions">
-          <a href="https://proimobil.md/apartamente-in-chisinau/vanzare-chisinau-telecentru-gheorghe-asachi-100352">Vizualizati
+          <a href="{% url 'announce_details' announce.id %}">Vizualizati
             &#x2192</a>
         </div>
       </div>
     </div>
-    <div class="card">
-      <img src="{% static 'img/apartamente/penthouse2.jpg' %}" alt="Apartament2" />
-      <div class="item-content">
-        <div>
-          <h2>51.920$</h2>
-          <p>
-            Vă propunem spre vânzare acest apartament cu 2 camere, sect. Ciocana, str. Podul Înalt cu suprafața
-            totală
-            de 50 mp.
-          </p>
-        </div>
-        <div class="actions">
-          <a href="https://proimobil.md/apartamente-in-chisinau/vanzare-chisinau-ciocana-podul-inalt-100359">Vizualizati
-            &#x2192</a>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="{% static 'img/apartamente/dormitor3.jpg' %}" alt="Apartament3" />
-      <div class="item-content">
-        <div>
-          <h2>87.000$</h2>
-          <p>
-            Vă propunem spre vânzare acest apartament cu 3 camere + living, sect. Centru, str. Valea Dicescu cu
-            suprafața totală de 63 mp.
-          </p>
-        </div>
-        <div class="actions">
-          <a href="https://proimobil.md/apartamente-in-chisinau/vanzare-chisinau-centru-valea-dicescu-100363">Vizualizati
-            &#x2192</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <h1 class="section-title">CASE</h1>
-  <div class="grid">
-    <div class="card">
-      <img src="{% static 'img/case/casa11.webp' %}" alt="Casa1" />
-      <div class="item-content">
-        <div>
-          <h2>210.000$</h2>
-          <p>
-            Vă propunem spre vînzare această casă în 2 nivele, amplasată în or. Ialoveni, str. Bălcescu cu
-            suprafața
-            totală de 260 mp + 7 ari.
-          </p>
-        </div>
-        <div class="actions">
-          <a href="https://proimobil.md/case-in-chisinau/vanzare-suburbie-ialoveni-balcescu-99721">Vizualizati
-            &#x2192</a>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="{% static 'img/case/casa12.jpg' %}" alt="Casa2" />
-      <div class="item-content">
-        <div>
-          <h2>280.900$</h2>
-          <p>
-            Vă propunem spre vînzare această casă în 2 nivele, amplasată în sect. Buiucani, Poiana Domnească cu
-            suprafața totală de 240 mp + 7 ari.
-          </p>
-        </div>
-        <div class="actions">
-          <a href="https://proimobil.md/case-in-chisinau/vanzare-chisinau-buiucani-poiana-domneasca-100229">Vizualizati
-            &#x2192</a>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="{% static 'img/case/casa13.jpg' %}" alt="Casa3" />
-      <div class="item-content">
-        <div>
-          <h2>310.000$</h2>
-          <p>
-            Vă propunem spre vînzare această casă în stil HI-TECH cu 2 nivele amplasată în sect. Rîșcani, str. Ana
-            Barbu cu suprafața totală de 200 m + 3 ari.
-          </p>
-        </div>
-        <div class="actions">
-          <a href="https://proimobil.md/case-in-chisinau/vanzare-chisinau-rascani-ana-barbu-99753">Vizualizati
-            &#x2192</a>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </section>
 

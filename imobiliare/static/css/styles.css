@@ -57,7 +57,7 @@ main ul {
   object-fit: cover;
 }
 
-.card h2 {
+.card {
   text-align: center;
 }
 
@@ -170,4 +170,13 @@ footer p {
 
 .login-form button:hover {
   color: #525252;
+}
+
+
+/* Announce_details  */
+
+.user-buttons {
+  border: 1px solid rgb(24, 24, 24);
+  padding-top: 5px;
+
 }
