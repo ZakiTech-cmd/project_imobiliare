@@ -3,20 +3,26 @@
 {% block content%}
 <section>
     <h1 class="section-title">{{announce.title}}</h1>
-    <div class="grid">
+    <div class="single-card">
         <div class="card">
-            <img src="{% static announce.image %}" alt="{{announce.title}}" />
+            <img src="{{announce.image}}" alt="{{announce.title}}" />
             <div class="item-content">
                 <div>
-                    <h2>{{announce.description}}</h2><br>
-                    <h3>
-                        {{announce.price}} €
+                    <p><strong>{{announce.description}}</strong></p><br>
+                    <p>Etajul: <strong>{{announce.floor}}</strong> </p>
+                    <p>Judetul: <strong>{{announce.county}}</strong> </p>
+                    <p>Localitatea: <strong>{{announce.location}}</strong></p>
+                    <p>Data publicarii: <strong>{{announce.publish_date}}</strong></p>
+                    <h3 class="price">
+                        Pretul: {{announce.price}} €
                     </h3>
                 </div>
-                <div class="user-buttons">
-                    <a href="">Edit</a>
-                    <a href="">Delete</a>
+                {% if request.user == announce.creator or request.user.is_superuser %}
+                <div class="card-actions">
+                    <a class="button" href="{% url 'update_announce' announce.id %}">Edit</a>
+                    <a class="button" href="{% url 'delete_announce' announce.id %}">Delete</a>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>

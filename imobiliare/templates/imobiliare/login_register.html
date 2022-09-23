@@ -1,22 +1,61 @@
 {% extends 'imobiliare/main.html' %}
 {% load static %}
 {% block content %}
+
+{% if page == 'login' %}
 <section>
   <h1 class="section-title">Intrare in cont</h1>
-  <form class="login-form card">
-    <input placeholder="E-mail" type="email" required>
-    <input placeholder="Parola" type="password" required class="margin-top">
-    <button class="margin-top"> Intra </button>
-  </form>
-</section>
-<section>
-  <h1 class="section-title"> Creare cont nou</h1>
-  <form class="login-form card">
-    <input placeholder="E-mail" type="email" required>
-    <input placeholder="Parola Noua" type="password" required class="margin-top">
-    <input placeholder="Confirmare Parola" type="password" required class="margin-top">
-    <button class="margin-top"> Creare </button>
+  <form method="POST" action="" class="login-form card">
+    {% csrf_token %}
+    <input placeholder="Username" name="username" type="text" required />
+    <input placeholder="Parola" name="password" type="password" required />
+    {% if messages %}
+    <div class="messages">
+      <ul>
+        {% for message in messages %}
+        <li>{{ message }} </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    <div>
+      <button type="submit" class="button"> Intra in Cont</button>
+    </div>
+    <div class="margin-top">
+      <p>Inca nu ai un cont?</p>
+      <a href="{% url 'register' %}">Inregistreaza-te</a>
+    </div>
   </form>
 </section>
 
+{% else %}
+
+<section>
+  <h1 class="section-title">Intrare in cont</h1>
+  <form method="POST" action="" class="login-form card">
+    {% csrf_token %}
+    <input placeholder="Username" name="username" type="text" required />
+    <input placeholder="Parola" type="password" name="password" required />
+    <input placeholder="Confirmare Parola" type="password" name="confirmation_password" required />
+    {% if messages %}
+    <div class="messages">
+      <ul>
+        {% for message in messages %}
+        <li>{{ message }} </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <div>
+      <button type="submit" class="button">Inregistreaza-te</button>
+    </div>
+    <div class="margin-top">
+      <p>Esti inregistrat?</p>
+      <a href="{% url 'login' %}">Intra in Cont</a>
+    </div>
+  </form>
+</section>
+
+{% endif %}
 {% endblock content %}
