@@ -112,10 +112,11 @@ def createAnnounce(request):
         county = request.POST.get('county')
         location = request.POST.get('location')
         image = request.POST.get('image')
+        phone = request.POST.get('phone_number')
 
         try:
             announce = Announce.objects.create(creator=request.user, title=title, description=description,
-                                               price=price, floor=floor, county=county, location=location, image=image)
+                                               price=price, floor=floor, county=county, location=location, image=image, phone_number=phone)
         except:
             messages.error(request, 'A aparut o erroare la crearea anuntului!')
 
@@ -147,6 +148,7 @@ def updateAnnounce(request, id):
         announce.county = request.POST.get('county')
         announce.location = request.POST.get('location')
         announce.image = request.POST.get('image')
+        announce.phone_number = request.POST.get('phone_number')
 
         try:
             announce.save()

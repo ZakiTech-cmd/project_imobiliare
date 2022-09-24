@@ -1,4 +1,3 @@
-from pickle import TRUE
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -15,6 +14,7 @@ class Announce(models.Model):
     image = models.CharField(max_length=500)
     publish_date = models.DateTimeField(auto_now_add=True)
     last_update = models.DateTimeField(auto_now=True)
+    phone_number = models.CharField(max_length=20)
 
     class Meta:
         ordering = ['-last_update', '-publish_date']
