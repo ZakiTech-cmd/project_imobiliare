@@ -1,0 +1,23 @@
+{% extends 'imobiliare/main.html' %}
+
+{% block content %}
+
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        <div class="add-form card">
+            <input placeholder="Titlu" name="title" type="text" required />
+            <textarea name="description" cols="30" rows="10" placeholder="Descriere"></textarea>
+            <input placeholder="Pretul" name="price" type="number" required />
+            <input placeholder="Etajul" name="floor" type="number" required />
+            <input placeholder="Judetul" name="county" type="text" required />
+            <input placeholder="Orasul" name="location" type="text" required />
+            <input placeholder="Imagini" name="image" type="text" required />
+            <button type="submit" class="button"> Adauga anunt</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock content %}

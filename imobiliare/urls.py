@@ -12,5 +12,5 @@ urlpatterns = [
     path('create_announce/', views.createAnnounce, name='create_announce'),
     path('update_announce/<int:id>/', views.updateAnnounce, name='update_announce'),
     path('delete_announce/<int:id>/', views.deleteAnnounce, name='delete_announce'),
-
+    path('search', views.searchAnnounce, name='search_announce')
 ]

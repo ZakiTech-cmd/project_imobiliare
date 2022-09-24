@@ -13,7 +13,8 @@
     <div class="messages">
       <ul>
         {% for message in messages %}
-        <li>{{ message }} </li>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}<li class="error">{{ message }}</li>{% endif %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}<li class="success">{{ message }}</li>{% endif %}
         {% endfor %}
       </ul>
     </div>
@@ -41,7 +42,8 @@
     <div class="messages">
       <ul>
         {% for message in messages %}
-        <li>{{ message }} </li>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}<li class="error">{{ message }}</li>{% endif %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}<li class="success">{{ message }}</li>{% endif %}
         {% endfor %}
       </ul>
     </div>

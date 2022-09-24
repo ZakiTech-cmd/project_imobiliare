@@ -1,0 +1,23 @@
+{% extends 'imobiliare/main.html' %}
+
+{% block content %}
+
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        <div class="add-form card">
+            <input placeholder="Titlu" name="title" type="text" value="{{announce.title}}" required />
+            <textarea name="description" cols="30" rows="10" placeholder="Descriere"> {{announce.description}}</textarea>
+            <input placeholder="Pretul" name="price" type="number" required  value="{{announce.price}}"/>
+            <input placeholder="Etajul" name="floor" type="number" required  value="{{announce.floor}}"/>
+            <input placeholder="Judetul" name="county" type="text" required  value="{{announce.county}}"/>
+            <input placeholder="Orasul" name="location" type="text" required  value="{{announce.location}}"/>
+            <input placeholder="Imagini" name="image" type="text" required  value="{{announce.image}}"/>
+            <button type="submit" class="button"> Salveaza Anunt</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock content %}
