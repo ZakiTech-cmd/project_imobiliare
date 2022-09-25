@@ -3,6 +3,9 @@
     <h1>IMOBILIARE</h1>
   </a>
   <div class="padding-top">
+    {% if user.is_superuser %}
+    <a href="/admin" class="margin-right button">Admin</a>
+    {% endif %}
     <!-- {% if request.user.is_active %} -->
     <a href="{% url 'create_announce'%}" class="margin-right button">Adauga Anunt</a>
     <!-- {% endif %} -->
