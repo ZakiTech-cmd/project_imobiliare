@@ -18,6 +18,7 @@ class Announce(models.Model):
 
     class Meta:
         ordering = ['-last_update', '-publish_date']
-
+#  functii care sunt declarate in interiorul clasei se numesc metode,
+#  Getter de titlu
     def __str__(self):
-        return self.title
+        return self.title 

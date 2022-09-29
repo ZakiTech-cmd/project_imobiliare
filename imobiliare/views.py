@@ -101,7 +101,7 @@ def my_announces(request):
     context = {'announces': announces, 'announces_no': len(announces)}
     return render(request, 'imobiliare/my_announces.html', context)
 
-
+# decorator
 @login_required(login_url='login')
 def createAnnounce(request):
     if request.method == 'POST':
@@ -119,6 +119,7 @@ def createAnnounce(request):
                                                price=price, floor=floor, county=county, location=location, image=image, phone_number=phone)
         except:
             messages.error(request, 'A aparut o erroare la crearea anuntului!')
+            return render(request, 'imobiliare/create_announce.html')
 
         return redirect('/announce_details/' + str(announce.id))
 
@@ -155,6 +156,7 @@ def updateAnnounce(request, id):
         except:
             messages.error(
                 request, 'A aparut o erroare la salvarea anuntului!')
+            return render(request, 'imobiliare/edit_announce.html')
 
         return redirect('/announce_details/' + str(announce.id))
 
@@ -178,6 +180,7 @@ def deleteAnnounce(request, id):
     if request.method == 'POST':
         announce.delete()
         return redirect('home')
+
     return render(request, 'imobiliare/delete.html', {'obj': announce})
 
 
@@ -189,4 +192,4 @@ def searchAnnounce(request):
         announces = Announce.objects.filter((Q(title__contains=search_text) | Q(description__contains=search_text)) &
                                             (Q(county__contains=search_location) | Q(location__contains=search_location)))
 
-    return render(request, 'imobiliare/home.html', {'announces': announces})
+        return render(request, 'imobiliare/home.html', {'announces': announces})
